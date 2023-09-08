@@ -26,9 +26,14 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'npm'
 
-      - name: CI for CDK
-        run: |
-          npm ci
-          npm -w cdk run lint
-          npm -w cdk test
-          npm -w cdk run synth
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: test
+        run: npm test
+
+      - name: Synth CDK
+        run: npm -w cdk run synth
