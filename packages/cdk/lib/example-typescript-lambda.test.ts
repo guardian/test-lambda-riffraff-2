@@ -8,6 +8,9 @@ describe('The ExampleTypescriptLambda stack', () => {
 		const stack = new ExampleTypescriptLambda(app, 'ExampleTypescriptLambda', {
 			stack: 'playground',
 			stage: 'TEST',
+			env: {
+				region: 'eu-west-1',
+			},
 		});
 		const template = Template.fromStack(stack);
 		expect(template.toJSON()).toMatchSnapshot();
