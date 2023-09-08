@@ -2,7 +2,7 @@
   "name": "lambda",
   "version": "0.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --detectOpenHandles --config ../../jest.config.js --selectProjects lambda",
     "start": "ts-node src/run-locally.ts"
   }
 }
