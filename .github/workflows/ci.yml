@@ -25,12 +25,10 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           cache: 'npm'
-          cache-dependency-path: 'cdk/package-lock.json'
 
       - name: CI for CDK
-        working-directory: cdk
         run: |
           npm ci
-          npm run lint
-          npm test
-          npm run synth
+          npm -w cdk run lint
+          npm -w cdk test
+          npm -w cdk run synth
