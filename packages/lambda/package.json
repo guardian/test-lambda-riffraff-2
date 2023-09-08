@@ -3,6 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "test": "jest --detectOpenHandles --config ../../jest.config.js --selectProjects lambda",
-    "start": "ts-node src/run-locally.ts"
+    "start": "ts-node src/run-locally.ts",
+    "prebuild": "rm -rf dist",
+    "build": "esbuild src/index.ts --bundle --platform=node --target=node18 --outdir=dist",
+    "postbuild": "cd dist && zip -r example-typescript-lambda.zip ."
+  },
+  "devDependencies": {
+    "esbuild": "^0.19.2"
   }
 }

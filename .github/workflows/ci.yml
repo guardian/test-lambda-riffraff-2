@@ -35,5 +35,8 @@ jobs:
       - name: test
         run: npm test
 
+      - name: Build
+        run: npm run build
+
       - name: Synth CDK
         run: npm -w cdk run synth
