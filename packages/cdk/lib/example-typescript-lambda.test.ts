@@ -13,6 +13,12 @@ describe('The ExampleTypescriptLambda stack', () => {
 			},
 		});
 		const template = Template.fromStack(stack);
+
+		/**
+		 * Snapshot testing helps to understand exactly what impact a CDK change will have on the provisioned infrastructure.
+		 *
+		 * @see https://github.com/guardian/cdk/blob/main/docs/best-practices.md#snapshot-testing
+		 */
 		expect(template.toJSON()).toMatchSnapshot();
 	});
 });
