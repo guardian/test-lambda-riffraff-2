@@ -15,11 +15,11 @@ export class ExampleTypescriptLambda extends GuStack {
 		 *
 		 * @see The `__snapshots__` directory for more.
 		 */
-		new GuLambdaFunction(this, 'ExampleTypescriptLambda', {
+		new GuLambdaFunction(this, 'ExampleTypescriptLambda-1', {
 			/**
 			 * This becomes the value of the APP tag on provisioned resources.
 			 */
-			app: 'example-typescript-lambda',
+			app: 'test-lambda-riffraff',
 
 			/**
 			 * This is the name of artifact in S3.

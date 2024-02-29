@@ -9,7 +9,7 @@ import { ExampleTypescriptLambda } from '../lib/example-typescript-lambda';
  */
 const app = new GuRootExperimental();
 
-new ExampleTypescriptLambda(app, 'ExampleTypescriptLambda-PROD', {
+new ExampleTypescriptLambda(app, 'TestLambdaRiffraff1-PROD', {
 	/**
 	 * This becomes the value of the STACK tag on provisioned resources.
 	 *

@@ -9,7 +9,7 @@ on:
 
   push:
     branches:
-      - example-typescript-lambda
+      - test-lambda-riffraff-1
 
 # Ensure we only ever have one build running at a time.
 # If we push twice in quick succession, the first build will be stopped once the second starts.
@@ -62,7 +62,7 @@ jobs:
       - name: Upload to riff-raff
         uses: guardian/actions-riff-raff@v2
         with:
-          projectName: playground::example-typescript-lambda
+          projectName: playground::test-lambda-riffraff-1
           configPath: packages/cdk/cdk.out/riff-raff.yaml
           contentDirectories: |
             cdk.out:
