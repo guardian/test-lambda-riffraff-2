@@ -17,21 +17,21 @@ exports[`The ExampleTypescriptLambda stack matches the snapshot 1`] = `
     },
   },
   "Resources": {
-    "ExampleTypescriptLambda948FA3B0": {
+    "ExampleTypescriptLambda10E0B0486": {
       "DependsOn": [
-        "ExampleTypescriptLambdaServiceRoleDefaultPolicy8B3129CD",
-        "ExampleTypescriptLambdaServiceRoleFE8EC8A1",
+        "ExampleTypescriptLambda1ServiceRoleDefaultPolicy76252A81",
+        "ExampleTypescriptLambda1ServiceRoleB3CC65C4",
       ],
       "Properties": {
         "Code": {
           "S3Bucket": {
             "Ref": "DistributionBucketName",
           },
-          "S3Key": "playground/TEST/example-typescript-lambda/example-typescript-lambda.zip",
+          "S3Key": "playground/TEST/test-lambda-riffraff/example-typescript-lambda.zip",
         },
         "Environment": {
           "Variables": {
-            "APP": "example-typescript-lambda",
+            "APP": "test-lambda-riffraff",
             "STACK": "playground",
             "STAGE": "TEST",
           },
@@ -40,7 +40,7 @@ exports[`The ExampleTypescriptLambda stack matches the snapshot 1`] = `
         "MemorySize": 512,
         "Role": {
           "Fn::GetAtt": [
-            "ExampleTypescriptLambdaServiceRoleFE8EC8A1",
+            "ExampleTypescriptLambda1ServiceRoleB3CC65C4",
             "Arn",
           ],
         },
@@ -48,7 +48,7 @@ exports[`The ExampleTypescriptLambda stack matches the snapshot 1`] = `
         "Tags": [
           {
             "Key": "App",
-            "Value": "example-typescript-lambda",
+            "Value": "test-lambda-riffraff",
           },
           {
             "Key": "gu:cdk:version",
@@ -56,7 +56,7 @@ exports[`The ExampleTypescriptLambda stack matches the snapshot 1`] = `
           },
           {
             "Key": "gu:repo",
-            "Value": "guardian/examples",
+            "Value": "guardian/test-lambda-riffraff-1",
           },
           {
             "Key": "Stack",
@@ -71,7 +71,60 @@ exports[`The ExampleTypescriptLambda stack matches the snapshot 1`] = `
       },
       "Type": "AWS::Lambda::Function",
     },
-    "ExampleTypescriptLambdaServiceRoleDefaultPolicy8B3129CD": {
+    "ExampleTypescriptLambda1ServiceRoleB3CC65C4": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+        "Tags": [
+          {
+            "Key": "App",
+            "Value": "test-lambda-riffraff",
+          },
+          {
+            "Key": "gu:cdk:version",
+            "Value": "TEST",
+          },
+          {
+            "Key": "gu:repo",
+            "Value": "guardian/test-lambda-riffraff-1",
+          },
+          {
+            "Key": "Stack",
+            "Value": "playground",
+          },
+          {
+            "Key": "Stage",
+            "Value": "TEST",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "ExampleTypescriptLambda1ServiceRoleDefaultPolicy76252A81": {
       "Properties": {
         "PolicyDocument": {
           "Statement": [
@@ -110,7 +163,7 @@ exports[`The ExampleTypescriptLambda stack matches the snapshot 1`] = `
                       {
                         "Ref": "DistributionBucketName",
                       },
-                      "/playground/TEST/example-typescript-lambda/example-typescript-lambda.zip",
+                      "/playground/TEST/test-lambda-riffraff/example-typescript-lambda.zip",
                     ],
                   ],
                 },
@@ -127,7 +180,7 @@ exports[`The ExampleTypescriptLambda stack matches the snapshot 1`] = `
                     {
                       "Ref": "AWS::AccountId",
                     },
-                    ":parameter/TEST/playground/example-typescript-lambda",
+                    ":parameter/TEST/playground/test-lambda-riffraff",
                   ],
                 ],
               },
@@ -146,7 +199,7 @@ exports[`The ExampleTypescriptLambda stack matches the snapshot 1`] = `
                     {
                       "Ref": "AWS::AccountId",
                     },
-                    ":parameter/TEST/playground/example-typescript-lambda/*",
+                    ":parameter/TEST/playground/test-lambda-riffraff/*",
                   ],
                 ],
               },
@@ -154,67 +207,14 @@ exports[`The ExampleTypescriptLambda stack matches the snapshot 1`] = `
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "ExampleTypescriptLambdaServiceRoleDefaultPolicy8B3129CD",
+        "PolicyName": "ExampleTypescriptLambda1ServiceRoleDefaultPolicy76252A81",
         "Roles": [
           {
-            "Ref": "ExampleTypescriptLambdaServiceRoleFE8EC8A1",
+            "Ref": "ExampleTypescriptLambda1ServiceRoleB3CC65C4",
           },
         ],
       },
       "Type": "AWS::IAM::Policy",
-    },
-    "ExampleTypescriptLambdaServiceRoleFE8EC8A1": {
-      "Properties": {
-        "AssumeRolePolicyDocument": {
-          "Statement": [
-            {
-              "Action": "sts:AssumeRole",
-              "Effect": "Allow",
-              "Principal": {
-                "Service": "lambda.amazonaws.com",
-              },
-            },
-          ],
-          "Version": "2012-10-17",
-        },
-        "ManagedPolicyArns": [
-          {
-            "Fn::Join": [
-              "",
-              [
-                "arn:",
-                {
-                  "Ref": "AWS::Partition",
-                },
-                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
-              ],
-            ],
-          },
-        ],
-        "Tags": [
-          {
-            "Key": "App",
-            "Value": "example-typescript-lambda",
-          },
-          {
-            "Key": "gu:cdk:version",
-            "Value": "TEST",
-          },
-          {
-            "Key": "gu:repo",
-            "Value": "guardian/examples",
-          },
-          {
-            "Key": "Stack",
-            "Value": "playground",
-          },
-          {
-            "Key": "Stage",
-            "Value": "TEST",
-          },
-        ],
-      },
-      "Type": "AWS::IAM::Role",
     },
   },
 }

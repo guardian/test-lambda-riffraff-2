@@ -5,13 +5,17 @@ import { ExampleTypescriptLambda } from './example-typescript-lambda';
 describe('The ExampleTypescriptLambda stack', () => {
 	it('matches the snapshot', () => {
 		const app = new App();
-		const stack = new ExampleTypescriptLambda(app, 'ExampleTypescriptLambda', {
-			stack: 'playground',
-			stage: 'TEST',
-			env: {
-				region: 'eu-west-1',
+		const stack = new ExampleTypescriptLambda(
+			app,
+			'ExampleTypescriptLambda-1',
+			{
+				stack: 'playground',
+				stage: 'TEST',
+				env: {
+					region: 'eu-west-1',
+				},
 			},
-		});
+		);
 		const template = Template.fromStack(stack);
 
 		/**
