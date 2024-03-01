@@ -69,4 +69,4 @@ jobs:
             cdk.out:
               - packages/cdk/cdk.out
             test-lambda-riffraff:
-              - packages/lambda/dist/example-typescript-lambda.zip
+              - packages/lambda/dist/test-lambda-riffraff.zip
