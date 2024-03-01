@@ -9,7 +9,7 @@ describe('The lambda', () => {
 	it('should return a greeting', async () => {
 		const response = await main();
 		expect(response).toContain(
-			'Hello from example-typescript-lambda in TEST, repo test-lambda-riffraff-1! The time is ',
+			'Hello from test-lambda-riffraff in TEST, repo test-lambda-riffraff-1! The time is ',
 		);
 	});
 });

@@ -1,6 +1,6 @@
 import 'source-map-support/register';
 import { GuRootExperimental } from '@guardian/cdk/lib/experimental/constructs';
-import { ExampleTypescriptLambda } from '../lib/example-typescript-lambda';
+import { TestTypescriptLambda } from '../lib/test-lambda-riffraff';
 
 /**
  * GuRootExperimental will generate a `riff-raff.yaml` configuration file to deploy this project with Riff-Raff.
@@ -9,7 +9,7 @@ import { ExampleTypescriptLambda } from '../lib/example-typescript-lambda';
  */
 const app = new GuRootExperimental();
 
-new ExampleTypescriptLambda(app, 'TestLambdaRiffraff1-PROD', {
+new TestTypescriptLambda(app, 'TestTypescriptLambda-PROD', {
 	/**
 	 * This becomes the value of the STACK tag on provisioned resources.
 	 *

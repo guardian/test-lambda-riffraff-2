@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`The ExampleTypescriptLambda stack matches the snapshot 1`] = `
+exports[`The TestTypescriptLambda stack matches the snapshot 1`] = `
 {
   "Metadata": {
     "gu:cdk:constructs": [
@@ -17,17 +17,17 @@ exports[`The ExampleTypescriptLambda stack matches the snapshot 1`] = `
     },
   },
   "Resources": {
-    "ExampleTypescriptLambda10E0B0486": {
+    "TestTypescriptLambda1681D6BD": {
       "DependsOn": [
-        "ExampleTypescriptLambda1ServiceRoleDefaultPolicy76252A81",
-        "ExampleTypescriptLambda1ServiceRoleB3CC65C4",
+        "TestTypescriptLambdaServiceRoleDefaultPolicy2A24A9BD",
+        "TestTypescriptLambdaServiceRoleCD1B69A4",
       ],
       "Properties": {
         "Code": {
           "S3Bucket": {
             "Ref": "DistributionBucketName",
           },
-          "S3Key": "playground/TEST/test-lambda-riffraff/example-typescript-lambda.zip",
+          "S3Key": "playground/TEST/test-lambda-riffraff/test-lambda-riffraff.zip",
         },
         "Environment": {
           "Variables": {
@@ -40,7 +40,7 @@ exports[`The ExampleTypescriptLambda stack matches the snapshot 1`] = `
         "MemorySize": 512,
         "Role": {
           "Fn::GetAtt": [
-            "ExampleTypescriptLambda1ServiceRoleB3CC65C4",
+            "TestTypescriptLambdaServiceRoleCD1B69A4",
             "Arn",
           ],
         },
@@ -71,7 +71,7 @@ exports[`The ExampleTypescriptLambda stack matches the snapshot 1`] = `
       },
       "Type": "AWS::Lambda::Function",
     },
-    "ExampleTypescriptLambda1ServiceRoleB3CC65C4": {
+    "TestTypescriptLambdaServiceRoleCD1B69A4": {
       "Properties": {
         "AssumeRolePolicyDocument": {
           "Statement": [
@@ -124,7 +124,7 @@ exports[`The ExampleTypescriptLambda stack matches the snapshot 1`] = `
       },
       "Type": "AWS::IAM::Role",
     },
-    "ExampleTypescriptLambda1ServiceRoleDefaultPolicy76252A81": {
+    "TestTypescriptLambdaServiceRoleDefaultPolicy2A24A9BD": {
       "Properties": {
         "PolicyDocument": {
           "Statement": [
@@ -163,7 +163,7 @@ exports[`The ExampleTypescriptLambda stack matches the snapshot 1`] = `
                       {
                         "Ref": "DistributionBucketName",
                       },
-                      "/playground/TEST/test-lambda-riffraff/example-typescript-lambda.zip",
+                      "/playground/TEST/test-lambda-riffraff/test-lambda-riffraff.zip",
                     ],
                   ],
                 },
@@ -207,10 +207,10 @@ exports[`The ExampleTypescriptLambda stack matches the snapshot 1`] = `
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "ExampleTypescriptLambda1ServiceRoleDefaultPolicy76252A81",
+        "PolicyName": "TestTypescriptLambdaServiceRoleDefaultPolicy2A24A9BD",
         "Roles": [
           {
-            "Ref": "ExampleTypescriptLambda1ServiceRoleB3CC65C4",
+            "Ref": "TestTypescriptLambdaServiceRoleCD1B69A4",
           },
         ],
       },
