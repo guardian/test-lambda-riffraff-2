@@ -9,6 +9,7 @@ on:
 
   push:
     branches:
+      - main
       - test-lambda-riffraff-1
 
 # Ensure we only ever have one build running at a time.
@@ -67,5 +68,5 @@ jobs:
           contentDirectories: |
             cdk.out:
               - packages/cdk/cdk.out
-            example-typescript-lambda:
+            test-lambda-riffraff:
               - packages/lambda/dist/example-typescript-lambda.zip
