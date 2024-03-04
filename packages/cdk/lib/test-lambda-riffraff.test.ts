@@ -1,11 +1,11 @@
 import { App } from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
-import { ExampleTypescriptLambda } from './example-typescript-lambda';
+import { TestTypescriptLambda } from './test-lambda-riffraff';
 
-describe('The ExampleTypescriptLambda stack', () => {
+describe('The TestTypescriptLambda stack', () => {
 	it('matches the snapshot', () => {
 		const app = new App();
-		const stack = new ExampleTypescriptLambda(app, 'ExampleTypescriptLambda', {
+		const stack = new TestTypescriptLambda(app, 'TestTypescriptLambda', {
 			stack: 'playground',
 			stage: 'TEST',
 			env: {

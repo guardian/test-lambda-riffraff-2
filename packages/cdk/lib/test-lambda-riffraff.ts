@@ -4,7 +4,7 @@ import { GuLambdaFunction } from '@guardian/cdk/lib/constructs/lambda';
 import type { App } from 'aws-cdk-lib';
 import { Runtime } from 'aws-cdk-lib/aws-lambda';
 
-export class ExampleTypescriptLambda extends GuStack {
+export class TestTypescriptLambda extends GuStack {
 	constructor(scope: App, id: string, props: GuStackProps) {
 		super(scope, id, props);
 
@@ -15,7 +15,7 @@ export class ExampleTypescriptLambda extends GuStack {
 		 *
 		 * @see The `__snapshots__` directory for more.
 		 */
-		new GuLambdaFunction(this, 'ExampleTypescriptLambda-1', {
+		new GuLambdaFunction(this, 'TestTypescriptLambda', {
 			/**
 			 * This becomes the value of the APP tag on provisioned resources.
 			 */
@@ -24,7 +24,7 @@ export class ExampleTypescriptLambda extends GuStack {
 			/**
 			 * This is the name of artifact in S3.
 			 */
-			fileName: 'example-typescript-lambda.zip',
+			fileName: 'test-lambda-riffraff.zip',
 
 			/**
 			 * The format of this is `<filename>.<exported function>`.
