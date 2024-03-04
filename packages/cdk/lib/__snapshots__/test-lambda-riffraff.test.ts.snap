@@ -56,7 +56,7 @@ exports[`The TestTypescriptLambda stack matches the snapshot 1`] = `
           },
           {
             "Key": "gu:repo",
-            "Value": "guardian/test-lambda-riffraff-1",
+            "Value": "guardian/test-lambda-riffraff-2",
           },
           {
             "Key": "Stack",
@@ -110,7 +110,7 @@ exports[`The TestTypescriptLambda stack matches the snapshot 1`] = `
           },
           {
             "Key": "gu:repo",
-            "Value": "guardian/test-lambda-riffraff-1",
+            "Value": "guardian/test-lambda-riffraff-2",
           },
           {
             "Key": "Stack",
